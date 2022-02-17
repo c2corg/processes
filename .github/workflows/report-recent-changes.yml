@@ -1,0 +1,19 @@
+name: Report recent changes made the last day
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron:  '00 02 * * *'
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/setup-python@v2
+    - run: pip install git+https://github.com/c2corg/CampBot.git
+    - run: campbot report_rc 1 $LANG $THREAD_URL --delay=0.1
+      env:
+        CAMPBOT_LOGIN: rabot
+        CAMPBOT_PASSWORD: ${{ secrets.RABOT_PASSWORD }}
+        LANG: fr
+        THREAD_URL: https://forum.camptocamp.org/t/viens-ici/294475
