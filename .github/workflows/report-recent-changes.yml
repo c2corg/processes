@@ -16,4 +16,4 @@ jobs:
         CAMPBOT_LOGIN: rabot
         CAMPBOT_PASSWORD: ${{ secrets.RABOT_PASSWORD }}
         LANG: fr
-        THREAD_URL: https://forum.camptocamp.org/t/corrections-automatiques-dans-le-topoguide/214780
+        THREAD_URL: https://forum.camptocamp.org/t/topoguide-verifications-automatiques/201480
